@@ -1,0 +1,216 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: #fefefe;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 12px 25px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 0;
+}
+
+.logo-img {
+  width: 4rem;
+  height :4rem;
+  border-radius: 50%;
+}
+
+
+.dream h1 {
+  font-size: 22px;
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 0 4px black;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+  color:#551A8B;
+}
+
+.nav-links li a:hover {
+  
+  color: #ffcc00;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* HERO TEXT */
+.hero-text {
+  text-align: center;
+  color: white;
+  margin-top: 100px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  text-shadow: 0 0 10px #000;
+}
+
+.hero-text p {
+  font-size: 25px;
+  text-shadow: 0 0 10px #000;
+}
+
+.hero-text button {
+  margin-top: 15px;
+  padding: 12px 28px;
+  font-size: 18px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.8);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  padding: 30px;
+  transition: 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.sidebar.active {
+  left: 0 ;
+}
+
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 25px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Close Button */
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
+
+  .hero-text h1 {
+    font-size: 45px;
+  }
+
+  .hero-text p {
+    font-size: 20px;
+  }
+}
