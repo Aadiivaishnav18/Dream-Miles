@@ -81,7 +81,7 @@ body {
   color: #ffcc00;
 }
 
-/* Hamburger Button */
+
 .menu-toggle {
   display: none;
   background: none;
@@ -90,7 +90,7 @@ body {
   cursor: pointer;
 }
 
-/* HERO TEXT */
+
 .hero-text {
   text-align: center;
   color: white;
@@ -171,13 +171,13 @@ body {
   color: #ffcc00;
 }
 
-/* Close Button */
+
 .close-btn {
   font-size: 28px;
   cursor: pointer;
 }
 
-/* OVERLAY */
+
 .overlay {
   position: fixed;
   top: 0;
