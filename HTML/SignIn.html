@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; overflow: hidden; }
-        
-        /* Video Background Styling */
+   
         .video-bg {
             position: fixed;
             top: 50%;
@@ -25,7 +24,7 @@
             object-fit: cover;
         }
 
-        /* Overlay to make text pop */
+      
         .overlay {
             position: fixed;
             top: 0; left: 0;
@@ -34,14 +33,14 @@
             z-index: -1;
         }
 
-        /* Custom Toggle Switch Colors */
-        .peer:checked ~ .toggle-bg { background-color: #2563eb; } /* blue-600 */
+    
+        .peer:checked ~ .toggle-bg { background-color: #2563eb; } 
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
     <video autoplay muted loop playsinline class="video-bg">
-        <source src="https://www.pexels.com/download/video/2772930/" type="video/mp4">
+        <source src="https://www.pexels.com/download/video/5608053/" type="video/mp4">
     </video>
     
     <div class="overlay"></div>
@@ -106,10 +105,9 @@
             e.preventDefault();
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-            const remember = document.getElementById("remember").checked;
-
             if (email && password) {
-                alert(`Logging in...\nEmail: ${email}\nRemember: ${remember}`);
+                alert(`Logging in...\nEmail: ${email}`);
+             window.location.href="./index.html";
             } else {
                 alert("Please enter email and password.");
             }

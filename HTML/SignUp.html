@@ -46,7 +46,7 @@
 <body class="flex items-center justify-center min-h-screen">
 
     <video autoplay muted loop playsinline class="video-bg">
-        <source src="https://www.pexels.com/download/video/5608053/" type="video/mp4">
+        <source src="https://www.pexels.com/download/video/2772930/" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
@@ -95,7 +95,7 @@
    
         <p class="text-sm text-white/70">
          Have an account? 
-            <a href="./Sign In.html" class="text-blue-300 font-bold hover:underline ml-1">Sign In</a>
+            <a href="./SignIn.html" class="text-blue-300 font-bold hover:underline ml-1">Sign In</a>
         </p>
     </div>
 
@@ -107,12 +107,12 @@
 
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-            const remember = document.getElementById("remember").checked;
-            
+           
             if(email && password) {
               
-                console.log("Login attempt:", { email, remember });
-                alert(`Welcome back, ${email}!\nRemember Me: ${remember ? 'Yes' : 'No'}`);
+                console.log("Login attempt:", { email });
+                alert(`Welcome back, ${email}`);
+                 window.location.href = "./SignIn.html";
             } else {
                 alert("Please fill in all fields.");
             }

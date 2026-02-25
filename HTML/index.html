@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dream Miles</title>
+  <link rel="stylesheet" href="/Dream-Miles/CSS code/index.css">
   <link rel="stylesheet" href="/Dream-Miles/CSS code/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -28,7 +29,26 @@
   
   <ul class="nav-links" style="gap: 50px;">
     <li><a href="./index.html">Home</a></li>
-    <li><a href="./HTML/SignIn.html">Travel</a></li>
+    <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Travel</a>
+    <div class="submenu"><ul>
+      <li>India</li>
+      <li>India</li>
+     <li>India</li>
+      <li>India</li>
+     <li>India</li>
+      <li>India</li>
+      <li>India</li>
+      <li>India</li>
+     <li>India</li>
+     <li>India</li>
+     <li>India</li>
+     <li>India</li>
+     <li>India</li>
+     <li>India</li>
+     <li>India</li>
+    </ul>
+    </div>
+    </li>
     <li> <a href="">Help</a></li>
     <li><a href="./HTML/SignIn.html">Sign In</a></li>
   </ul>
@@ -64,5 +84,31 @@
     </div>
   </header>
   <script src="/Dream-Miles/JS/main.js"></script>
+
+  <script>
+    document.querySelector('.dropbtn').addEventListener('click',function(e){
+      e.preventDefault();  //stop karnga link from jumping
+
+     const submenu=this.nextElementSibling;
+
+     submenu.classList.toggle('show')
+    });
+  
+    window.onclick=function(event){
+      if(!event.target.matches('.dropbtn')){
+ 
+        const dropdowns=document.getElementsByClassName("submenu");
+        for(let i=0;i<dropdowns.length;i++){
+          let openDropdown =dropdowns[i];
+          if (openDropdown.classList.contains('show')){
+            openDropdown.classList.remove('show');
+          }
+        }
+
+      }
+    }
+
+
+  </script>
 </body>
 </html>
