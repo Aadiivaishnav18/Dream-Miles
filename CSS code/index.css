@@ -1,52 +1,75 @@
-.dropdown {
-    list-style: none;
-    position: relative;
-    display: inline-block;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1000;
-    border: 1px solid #ddd;
-    top: 100%; 
-    left: 0;
-
-    max-height: 200px; 
-    overflow-y: auto; 
-}
-
-.submenu.show {
-    display: block;
-}
-
-.submenu ul {
-    list-style: none;
-    padding: 0;
+*{
     margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Inter'sans-serif;
+}
+body,html{
+    height: 100%;
+    overflow: hidden;
+
 }
 
-.submenu li {
-    padding: 0 15px;
-    height: 40px;     
-    line-height: 40px; 
-    border-bottom: 1px solid #eee;
-    color: #333;
-    cursor: pointer;
+
+/* For Background video*/
+
+.video-bg{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width:100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.6);
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
 }
 
+.sign-out{
+    background:rgba(255,255,255,0.1);
+   border: 1px solid rgba(255, gr255, 255, 0.2);
+   border-radius: 20px;
+   padding: 40px;
+   width: 100%;
+   max-width: 400px;
+   text-align: center;
+   box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+   color: white;
 
-.submenu li:hover {
-    background-color: #f1f1f1;
 }
 
-.submenu::-webkit-scrollbar {
-    width: 6px;
+h1{
+    font-weight:600;
+    margin-bottom: 15px;
+    font-size: 2rem;
 }
-.submenu::-webkit-scrollbar-thumb {
-    background: #6a1b9a; 
-    border-radius: 10px;
+p{
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.5;
+
 }
+
+        .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #000;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e2e2e2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);}

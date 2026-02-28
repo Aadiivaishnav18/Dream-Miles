@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dream Miles</title>
-  <link rel="stylesheet" href="/Dream-Miles/CSS code/index.css">
   <link rel="stylesheet" href="/Dream-Miles/CSS code/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -32,25 +31,25 @@
     <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Travel</a>
     <div class="submenu"><ul>
       <li>India</li>
-      <li>India</li>
-     <li>India</li>
-      <li>India</li>
-     <li>India</li>
-      <li>India</li>
-      <li>India</li>
-      <li>India</li>
-     <li>India</li>
-     <li>India</li>
-     <li>India</li>
-     <li>India</li>
-     <li>India</li>
-     <li>India</li>
-     <li>India</li>
+      <li>France</li>
+     <li>Canada</li>
+      <li>Italy</li>
+     <li>Russia</li>
+      <li>Brazil</li>
+      <li>Indonesia</li>
+      <li>America</li>
+     <li>London</li>
+     <li>Nepal</li>
+     <li>Japan</li>
+     <li>Shri Lanka</li>
+     <li>IMexico</li>
+     <li>South Koria</li>
+     <li>Spain</li>
     </ul>
     </div>
     </li>
     <li> <a href="">Help</a></li>
-    <li><a href="./HTML/SignIn.html">Sign In</a></li>
+    <li><a href="./HTML/SignIn.Out">Sign Out</a></li>
   </ul>
  
 
@@ -59,17 +58,36 @@
 
 
 
-  <!-- Sidebar (Mobile Navigation) -->
+ 
 <div class="sidebar" id="sidebar">
   <div class="sidebar-header">
     <h2><b>Dream Miles</b></h2>
     <span class="close-btn" id="close-btn">&times;</span>
   </div>
   <ul>
-    <li><a href="/Dream-Miles/index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="./HTML/Sign In.html"><i class="fas fa-plane"></i> Travel</a></li>
+    <li><a href="./index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li class="slidebar-dropdown"><a href="javascript:void(0)" class="dropbtn"> <i class="fas fa-plane"></i>Travel</a>
+    <div class="submenu"><ul>
+      <li>India</li>
+      <li>France</li>
+     <li>Canada</li>
+      <li>Italy</li>
+     <li>Russia</li>
+      <li>Brazil</li>
+      <li>Indonesia</li>
+      <li>America</li>
+     <li>London</li>
+     <li>Nepal</li>
+     <li>Japan</li>
+     <li>Shri Lanka</li>
+     <li>IMexico</li>
+     <li>South Koria</li>
+     <li>Spain</li>
+    </ul>
+    </div>
+    </li>
     <li><a href=""><i class="fas fa-question-circle"></i> Help</a></li>
-    <li><a href="./HTML/Sign In.html"><i class="fas fa-user"></i>Sign In </a></li>
+    <li><a href="./HTML/Sign Out.html"><i class="fas fa-user"></i>Sign Out </a></li>
   </ul>
 </div>
 
@@ -87,7 +105,7 @@
 
   <script>
     document.querySelector('.dropbtn').addEventListener('click',function(e){
-      e.preventDefault();  //stop karnga link from jumping
+      e.preventDefault(); 
 
      const submenu=this.nextElementSibling;
 
