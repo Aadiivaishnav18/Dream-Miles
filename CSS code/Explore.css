@@ -209,34 +209,50 @@ body {
 }
 
 .submenu {
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background: #fff;
-  width: 170px;
-  border-radius: 6px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  display: none;
-}
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border: 1px solid #ddd;
+    top: 100%; 
+    left: 0;
 
-.submenu ul {
-  list-style: none;
-}
-
-.submenu ul li a,
-.submenu ul li {
-  display: block;
-  padding: 12px;
-  color: #222;
-  cursor: pointer;
-}
-
-.submenu ul li:hover {
-  background: #f2f2f2;
+    max-height: 200px; 
+    overflow-y: auto; 
 }
 
 .submenu.show {
-  display: block;
+    display: block;
+}
+
+.submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu li {
+    padding: 0 15px;
+    height: 40px;     
+    line-height: 40px; 
+    border-bottom: 1px solid #eee;
+    color: #333;
+    cursor: pointer;
+}
+
+
+.submenu li:hover {
+    background-color: #f1f1f1;
+}
+
+.submenu::-webkit-scrollbar {
+    width: 6px;
+}
+.submenu::-webkit-scrollbar-thumb {
+    background: #6a1b9a; 
+    border-radius: 10px;
 }
 
 .menu-toggle {
@@ -364,16 +380,104 @@ body {
 .card-btn:hover {
   background: #ff9800;
 }
+/* TOUR PACKAGE SECTION */
+.explore-tour {
+  padding: 80px 8%;
+  background: #f9f9f9;
+  text-align: center;
+}
 
+.explore-tour h2 {
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+/* GRID */
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.2);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.card .content {
+  padding: 25px;
+  text-align: left;
+}
+
+.card .content h2 {
+  font-size: 1.6rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.card .content h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card .content p {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0b5ed7;
+}
 
 /*
    SECTION 5 : FOOTER */
-#footer-section .footer {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+ #footer-section{
+
+background-color:black;
+    text-align: center;
+    height: 500px;
+    width: 100%;
+ }
+
+.Footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.flogo-img {
+  margin-top: 10%;
+    width: 100px;
+  height: 100px;
+
+}
+.fdream p{
+  color: white;
+  padding-top: 10%;
+  margin-top: 10%;
+  text-shadow: black;
+
+}
+
+
+
 
 /*
    RESPONSIVE */
@@ -416,5 +520,19 @@ body {
 @media (max-width: 500px) {
   .destination-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-tour {
+    padding: 60px 6%;
+  }
+
+  .explore-tour h2 {
+    font-size: 2.2rem;
+  }
+
+  .card img {
+    height: 200px;
   }
 }
