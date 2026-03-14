@@ -1,68 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dream Miles</title>
-  <link rel="stylesheet" href="/Dream-Miles/CSS code/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <video autoplay muted loop class="bg-video">
-      <source src="https://www.pexels.com/download/video/2146396/" type="video/mp4">
-    </video>
-
-    <!-- Navbar -->
-  <nav class="navbar">
-  <div class="logo-area">
-    <img src="/Dream-Miles/photo/logo.jpg" alt="Logo" class="logo-img"/>
-    <div class="dream">
-      <h1><b>Dream Miles</b></h1>
-    </div>
-  </div>
-
-
-  
-  <ul class="nav-links" style="gap: 50px;">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./HTML/SignIn.html">Travel</a></li>
-    <li> <a href="">Help</a></li>
-    <li><a href="./HTML/SignIn.html">Sign In</a></li>
-  </ul>
- 
-
-  <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" style="size: 40px;">&#9776;</button>
-</nav>
-
-
-
-  <!-- Sidebar (Mobile Navigation) -->
-<div class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <h2><b>Dream Miles</b></h2>
-    <span class="close-btn" id="close-btn">&times;</span>
-  </div>
-  <ul>
-    <li><a href="/Dream-Miles/index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="./HTML/Sign In.html"><i class="fas fa-plane"></i> Travel</a></li>
-    <li><a href=""><i class="fas fa-question-circle"></i> Help</a></li>
-    <li><a href="./HTML/SignIn.html"><i class="fas fa-user"></i>Sign In </a></li>
-  </ul>
-</div>
-
-<div id="overlay" class="overlay" tabindex="-1"></div>
-
-
-    <div class="hero-text">
-      <h1><b>Welcome to Dream Miles</b></h1>
-      <p><b>Explore the Land Down Under</b></p>
-      <br>
-      <a href="./HTML/Sign In.html"><button>Explore Now</button></a> 
-    </div>
-  </header>
-  <script src="/Dream-Miles/JS/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dream-miles</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

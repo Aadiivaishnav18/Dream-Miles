@@ -300,46 +300,7 @@
 
 
 
-<!--
-  SECTION 5 : FOOTER-->
-<section id="footer-section">
-  <footer class="footer">
 
-     <div class="Footer-logo">
-    <img src="/Dream-Miles/photo/logo.jpg" alt="f-Logo" class="flogo-img"/>
-    <div class="fdream">
-      <p>Explore - The World With Dream-Miles </p>
-    </div>
-  </div>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <p>© 2026 Dream Miles. All Rights Reserved.</p>
-  </footer>
-</section>
 
 <!-- 
   SECTION 6 : JAVASCRIPT
@@ -370,6 +331,36 @@
       sidebar.classList.remove("active");
       overlay.classList.remove("active");
     };
+const slider = document.getElementById("hotelSlider");
+
+function moveSlide(direction){
+    slider.scrollLeft += direction * 340;
+}
+
+let autoScroll = setInterval(()=>{
+    slider.scrollLeft += 340;
+
+    if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+        slider.scrollLeft = 0;
+    }
+
+},3000);
+
+slider.addEventListener("mouseenter",()=>{
+    clearInterval(autoScroll);
+});
+
+slider.addEventListener("mouseleave",()=>{
+    autoScroll = setInterval(()=>{
+        slider.scrollLeft += 340;
+
+        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth){
+            slider.scrollLeft = 0;
+        }
+
+    },3000);
+});
+  
   </script>
 
 </section>
