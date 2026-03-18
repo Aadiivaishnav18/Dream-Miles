@@ -1,0 +1,141 @@
+{
+  "project_name": "DREAM-MILES",
+  "identity": {
+    "designer": "E1",
+    "persona": "The Anti-AI Designer",
+    "principles": [
+      "Fusion over Imitation: Mix tropical calm with swiss precision.",
+      "Emotion First: Every pixel must whisper 'Luxury' and 'Adventure'.",
+      "Content is King: The destination is the hero, the UI is the frame.",
+      "Zoom In: Use massive, immersive imagery.",
+      "Negative Space: Luxury is the absence of clutter."
+    ]
+  },
+  "technical_constraints": {
+    "framework": "React",
+    "styling": "Tailwind CSS v3 (Use v4-style composition where possible)",
+    "icons": "Lucide React (primary), React Icons (for brands/socials)",
+    "animation": "Framer Motion (MANDATORY for all interactions)",
+    "fonts": "Playfair Display (Headings), DM Sans (Body)"
+  },
+  "theme_strategy": {
+    "mode": "toggle",
+    "default": "light",
+    "palettes": {
+      "light": {
+        "name": "Tropical Sand",
+        "background": "#FAFAF9", 
+        "foreground": "#0C0A09",
+        "primary": "#0D9488",
+        "secondary": "#FF6B6B",
+        "accent": "#FDBA74",
+        "card": "#FFFFFF"
+      },
+      "dark": {
+        "name": "Midnight Ocean",
+        "background": "#020617",
+        "foreground": "#F8FAFC",
+        "primary": "#2DD4BF",
+        "secondary": "#FB7185",
+        "accent": "#FDBA74",
+        "card": "#0F172A"
+      }
+    }
+  },
+  "typography": {
+    "headings": {
+      "family": "Playfair Display, serif",
+      "weights": ["400", "600", "700"],
+      "usage": "Hero titles, Section headers, Country names"
+    },
+    "body": {
+      "family": "DM Sans, sans-serif",
+      "weights": ["400", "500", "700"],
+      "usage": "Navigation, Descriptions, Buttons, Forms"
+    }
+  },
+  "layout_strategies": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "spacing": "Generous (p-8 to p-32)",
+    "grid_system": "Bento Grid (Asymmetric) for Destinations",
+    "border_radius": "Rounded-2xl or Rounded-3xl for a soft, premium feel"
+  },
+  "component_guidelines": {
+    "navbar": {
+      "style": "Glassmorphism (Backdrop blur-xl, border-b border-white/10)",
+      "position": "Fixed top, full width, z-50",
+      "elements": "Logo (Serif), Nav Links (uppercase tracking-widest), Theme Toggle, 'Book Now' Pill Button"
+    },
+    "hero": {
+      "style": "Full-screen (h-screen) video/image background",
+      "overlay": "Gradient from bottom (black/80 to transparent)",
+      "content": "Centered or Bottom-Left aligned. Massive Typography (text-6xl+). Floating Search Bar."
+    },
+    "destinations_grid": {
+      "style": "Bento Grid (Grid-cols-12)",
+      "cards": "Image-full, text overlay on hover. Slow zoom animation on hover."
+    },
+    "hotel_cards": {
+      "style": "Clean, minimal, high-aspect ratio images. Price tag floating top-right.",
+      "interaction": "Lift on hover (translate-y-2), shadow-xl"
+    },
+    "booking_form": {
+      "style": "Floating glass panel or solid minimal card. Multi-step feel.",
+      "inputs": "Underlined or minimal filled backgrounds. No default borders."
+    }
+  },
+  "visual_assets": {
+    "hero_background": {
+      "type": "image",
+      "url": "https://images.unsplash.com/photo-1619108686237-66720cffacad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxjaW5lbWF0aWMlMjB0cm9waWNhbCUyMGJlYWNoJTIwYWVyaWFsJTIwdmlldyUyMHR1cnF1b2lzZSUyMG9jZWFufGVufDB8fHx8MTc3Mzc3NDY0OXww&ixlib=rb-4.1.0&q=85",
+      "alt": "Aerial view of turquoise ocean waves"
+    },
+    "destinations": [
+      {
+        "name": "Paris, France",
+        "url": "https://images.unsplash.com/photo-1642947392578-b37fbd9a4d45?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxQYXJpcyUyMEVpZmZlbCUyMFRvd2VyJTIwc3Vuc2V0fGVufDB8fHx8MTc3Mzc3NDY2NXww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "Santorini, Greece",
+        "url": "https://images.unsplash.com/photo-1720630941637-19875699aae7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwzfHxTYW50b3JpbmklMjBHcmVlY2UlMjBibHVlJTIwZG9tZXN8ZW58MHx8fHwxNzczNzc0NjY3fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "Tokyo, Japan",
+        "url": "https://images.unsplash.com/photo-1613488328514-e424950c0b0d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxUb2t5byUyMG5lb24lMjBzdHJlZXRzJTIwbmlnaHR8ZW58MHx8fHwxNzczNzc0NjY4fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "New York, USA",
+        "url": "https://images.unsplash.com/photo-1675967368088-457ba4ffac05?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwyfHxOZXclMjBZb3JrJTIwQ2l0eSUyMHNreWxpbmUlMjBkYXl8ZW58MHx8fHwxNzczNzc0NjcwfDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "Maldives",
+        "url": "https://images.unsplash.com/photo-1516439851893-1367ebb35ea7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxjaW5lbWF0aWMlMjB0cm9waWNhbCUyMGJlYWNoJTIwYWVyaWFsJTIwdmlldyUyMHR1cnF1b2lzZSUyMG9jZWFufGVufDB8fHx8MTc3Mzc3NDY0OXww&ixlib=rb-4.1.0&q=85"
+      }
+    ],
+    "hotels": [
+      {
+        "name": "Azure Luxury Resort",
+        "url": "https://images.unsplash.com/photo-1572467667867-23dce320d796?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBob3RlbCUyMGJlZHJvb20lMjBvY2VhbiUyMHZpZXclMjBtb2Rlcm4lMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzM3NzQ2NDl8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "Ocean View Suite",
+        "url": "https://images.unsplash.com/photo-1721369483526-62f48a00b949?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBob3RlbCUyMGJlZHJvb20lMjBvY2VhbiUyMHZpZXclMjBtb2Rlcm4lMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzM3NzQ2NDl8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "name": "Tropical Villa",
+        "url": "https://images.unsplash.com/photo-1709187516056-d4929b67e89f?crop=entropy&cs=srgb\u0026fm=jpg\u0026ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGJlZHJvb20lMjBvY2VhbiUyMHZpZXclMjBtb2Rlcm4lMjBpbnRlcmlvcnxlbnwwfHx8fDE3NzM3NzQ2NDl8MA\u0026ixlib=rb-4.1.0\u0026q=85"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "INSTALL MISSING DEPS: npm install framer-motion react-icons lucide-react",
+    "Tailwind v3 is installed. Do NOT use v4 specific syntax like @theme.",
+    "Use 'Playfair Display' for all Headings (H1-H4) and 'DM Sans' for body.",
+    "For the 'Explore' section, create a BENTO GRID layout (mix of col-span-1, col-span-2, row-span-2).",
+    "Hero Section MUST use the provided 'Aerial view' image as a background if video fails. Overlay it with a dark gradient for text readability.",
+    "Hotels section should use 'Glassmorphism' cards with high-quality images.",
+    "Ensure Dark/Light mode toggle works and persists state.",
+    "Use Framer Motion for 'staggerChildren' effects on grids and 'fadeInUp' for sections."
+  ]
+}
+
