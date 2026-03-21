@@ -1,85 +1,128 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { FiArrowRight } from 'react-icons/fi';
+import { useState } from "react";
+import { Menu, X, Moon, ChevronRight } from "lucide-react";
 
 const Hero = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="relative h-screen w-full overflow-hidden" data-testid="hero-section">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1619108686237-66720cffacad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxjaW5lbWF0aWMlMjB0cm9waWNhbCUyMGJlYWNoJTIwYWVyaWFsJTIwdmlldyUyMHR1cnF1b2lzZSUyMG9jZWFufGVufDB8fHx8MTc3Mzc3NDY0OXww&ixlib=rb-4.1.0&q=85')",
-        }}
-      >
+    <div className="relative h-screen w-full overflow-hidden font-[DM_Sans]">
+
+      {/* 🎬 Background Video */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          className="w-full h-full object-cover"
+          src="https://www.pexels.com/download/video/5457968/"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
-      {/* Content */}
-      <div className="relative h-full flex items-center justify-center px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight"
-            data-testid="hero-title"
-          >
-            Explore The World With <span className="text-primary">Dream Miles</span>
-          </motion.h1>
+      {/* 🔝 Navbar */}
+      <nav className="absolute top-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto"
-            data-testid="hero-subtitle"
-          >
-            Discover breathtaking destinations and plan unforgettable journeys
-          </motion.p>
+          {/* Logo */}
+          <h1 className="text-3xl text-white tracking-wide">
+            <span className="font-[Playfair_Display] italic">Dream</span>
+            <span className="font-[Playfair_Display] italic text-primary">
+              Miles
+            </span>
+          </h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-10 text-[12px] uppercase tracking-[0.25em] text-white/80 font-medium">
+            {["Home", "Destinations", "Packages", "Hotels", "Booking"].map(
+              (item) => (
+                <a key={item} href="#" className="hover:text-primary transition">
+                  {item}
+                </a>
+              )
+            )}
+          </div>
+
+          {/* Right Actions */}
+          <div className="hidden lg:flex items-center gap-5">
+            <button className="p-2 rounded-full bg-white/10 border border-white/20">
+              <Moon size={16} className="text-white" />
+            </button>
+
+            <button className="text-white text-sm px-5 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition">
+              Sign In
+            </button>
+
+            <button className="bg-primary text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:scale-105 transition">
+              Sign Up
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Link
-              to="/destinations"
-              data-testid="explore-destinations-button"
-              className="group px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all flex items-center space-x-2 hover:scale-105"
-            >
-              <span>Explore Destinations</span>
-              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/booking"
-              data-testid="book-now-button"
-              className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold border-2 border-white/30 hover:bg-white/20 transition-all hover:scale-105"
-            >
-              Book Now
-            </Link>
-          </motion.div>
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* 📱 Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-20 left-0 w-full bg-black/90 backdrop-blur-xl z-40 flex flex-col items-center gap-6 py-10 text-white uppercase tracking-widest">
+          {["Home", "Destinations", "Packages", "Hotels", "Booking"].map(
+            (item) => (
+              <a key={item} href="#" className="hover:text-primary transition">
+                {item}
+              </a>
+            )
+          )}
+        </div>
+      )}
+
+      {/* 🌍 Hero Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6 -mt-10">
+
+        {/* Heading */}
+        <h1 className="font-[Playfair_Display] text-white font-semibold leading-tight text-5xl md:text-7xl lg:text-[95px] max-w-6xl">
+          Explore The World With <br />
+          <span className="text-primary font-bold">
+            Dream Miles
+          </span>
+        </h1>
+
+        {/* Subtext */}
+        <p className="mt-6 text-white/80 max-w-2xl text-lg md:text-xl">
+          Discover breathtaking destinations and plan unforgettable journeys
+        </p>
+
+        {/* Buttons */}
+        <div className="mt-10 flex flex-col sm:flex-row gap-6 items-center">
+
+          <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300">
+            Explore Destinations
+          </button>
+
+          <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300">
+            Book Now
+          </button>
+
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10">
+          <div className="w-6 h-11 border border-white/40 rounded-full flex justify-center items-start p-2">
+            <div className="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2"
-        >
-          <motion.div className="w-1.5 h-1.5 bg-white rounded-full" />
-        </motion.div>
-      </motion.div>
+      {/* 🏷️ Bottom Tag */}
+      <div className="absolute bottom-6 right-8 bg-black/70 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-xs text-white">
+        Made with ❤️ by Dream Miles
+      </div>
     </div>
   );
 };
