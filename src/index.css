@@ -2,20 +2,19 @@
 
 
 @theme {
-  /* 1. Define the colors here first */
+
   --color-primary: #7ed9d1;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-border: hsl(var(--border));
   
-  /* 2. Define the fonts */
   --font-serif: "Playfair Display", serif;
   --font-sans: "DM Sans", sans-serif;
 }
 
 @layer base {
   :root {
-    /* 3. Define the raw values */
+ 
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --primary: 172 56% 66%;
@@ -31,11 +30,11 @@
 
 @layer base {
   * {
-    /* Now this will work because 'border' is in @theme */
+  
     @apply border-border;
   }
   body {
-    /* Now this will work because 'background' and 'foreground' are in @theme */
+  
     @apply bg-background text-foreground font-sans antialiased;
     margin: 0;
   }
