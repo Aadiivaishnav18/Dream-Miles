@@ -3,17 +3,17 @@ import React from 'react';
 const destinations = [
   {
     id: 1,
-    country: 'Japan',
-    description: 'Experience the perfect blend of ancient tradition and cutting-edge technology.',
-    price: '$1299',
+    country: 'India',
+   description: 'https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg.',
+    price: '$1899',
     rating: '4.9',
-    image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.pexels.com/photos/9179927/pexels-photo-9179927.jpeg',
   },
   {
     id: 2,
     country: 'Italy',
     description: 'Discover art, history, and culinary excellence in the heart of Europe.',
-    price: '$1499',
+    price: '$1799',
     rating: '4.8',
     image: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80',
   },
@@ -21,9 +21,36 @@ const destinations = [
     id: 3,
     country: 'Australia',
     description: 'Explore diverse landscapes from coral reefs to the outback.',
-    price: '$1799',
+    price: '$1599',
     rating: '4.7',
     image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80',
+  },
+
+    {
+    id: 4,
+    country: 'Japan',
+ description: 'Experience the perfect blend of ancient tradition and cutting-edge technology.',
+    price: '$1499',
+    rating: '4.6',
+    image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80',
+  },
+
+    {
+    id: 5,
+    country: 'London',
+    description: 'Experience London’s culture, history, and vibrant city life.',
+    price: '$1399',
+    rating: '4.5',
+    image: 'https://images.pexels.com/photos/2611465/pexels-photo-2611465.jpeg',
+  },
+
+    {
+    id: 6,
+    country: 'Switerland',
+description: 'Discover Switzerland’s lakes, mountains, and charming villages.',
+    price: '$1299',
+    rating: '4.4',
+    image: 'https://images.pexels.com/photos/2026454/pexels-photo-2026454.jpeg',
   },
 
 ];

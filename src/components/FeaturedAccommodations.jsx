@@ -63,7 +63,7 @@ const AccommodationCard = ({ item }) => (
       </div>
     </div>
 
-    {/* Content */}
+
     <div className="p-7 flex flex-col flex-grow">
 
       <h3 className="text-[26px] font-serif font-bold text-gray-900 mb-1 group-hover:text-[#4db2a4] transition-colors">
@@ -104,8 +104,6 @@ const FeaturedAccommodations = () => {
     <div className="min-h-screen bg-[#fcfcfc] py-20 px-6">
 
       <section className="max-w-7xl mx-auto">
-
-        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-serif font-bold mb-5 text-gray-900">
             Featured Accommodations

@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         <video
           className="w-full h-full object-cover"
-          src="https://www.pexels.com/download/video/5457968/"
+          src="https://www.pexels.com/download/video/855633/"
           autoPlay
           loop
           muted

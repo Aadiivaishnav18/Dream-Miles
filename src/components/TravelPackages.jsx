@@ -50,23 +50,27 @@ const TravelPackages = () => {
         <h2 className="text-4xl md:text-5xl font-[Playfair_Display] font-bold text-gray-900">
           Travel Packages
         </h2>
+
         <p className="text-gray-500 mt-4 mb-16 text-lg">
           Choose the perfect package for your dream vacation
         </p>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-8 justify-items-center">
 
           {packages.map((pkg, i) => (
             <div
               key={i}
-              className={`relative bg-white/80 backdrop-blur-lg rounded-3xl p-10 shadow-xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl ${
-                pkg.popular && "border-2 border-[#4db2a4] scale-105"
+              className={`relative w-[330px] rounded-2xl p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl
+              ${
+                pkg.popular
+                  ? "bg-white/50 backdrop-blur-xl border border-white/30 scale-105 shadow-2xl before:absolute before:inset-0 before:rounded-2xl before:bg-[#4db2a4]/20 before:blur-2xl before:-z-10"
+                  : "bg-white/90 shadow-lg"
               }`}
             >
 
               {/* Popular Badge */}
               {pkg.popular && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#4db2a4] text-white px-5 py-1 rounded-full text-xs font-semibold shadow-md">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#4db2a4] text-white px-4 py-1 rounded-full text-[10px] font-semibold shadow-md">
                   MOST POPULAR
                 </span>
               )}
@@ -75,29 +79,30 @@ const TravelPackages = () => {
                 {pkg.title}
               </h3>
 
-              <p className="text-gray-500 text-sm mt-2">
+              <p className="text-gray-500 text-sm mt-1">
                 {pkg.duration}
               </p>
 
-              <p className="text-5xl font-extrabold text-[#4db2a4] mt-8">
+              <p className="text-4xl font-extrabold text-[#4db2a4] mt-6">
                 {pkg.price}
                 <span className="text-sm text-gray-500"> /person</span>
               </p>
 
-              <ul className="mt-8 space-y-4 text-gray-600 text-left">
+              <ul className="mt-6 space-y-3 text-gray-600 text-sm text-left">
                 {pkg.features.map((f, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <span className="bg-[#e6f7f5] p-1.5 rounded-full">
-                      <FiCheck className="text-[#4db2a4]" />
+                  <li key={idx} className="flex items-center gap-2">
+                    <span className="bg-[#e6f7f5] p-1 rounded-full">
+                      <FiCheck className="text-[#4db2a4] text-sm" />
                     </span>
                     {f}
                   </li>
                 ))}
               </ul>
 
-           <button className="mt-10 w-full bg-[#4db2a4] text-white py-4 rounded-full font-bold text-base tracking-wide shadow-lg hover:bg-[#3d9185] transition-all duration-300">
-  Book Now
-</button>
+              <button className="mt-7 w-full bg-[#4db2a4] text-white py-3 rounded-full font-semibold text-sm tracking-wide shadow-md hover:bg-[#3d9185] transition-all duration-300">
+                Book Now
+              </button>
+
             </div>
           ))}
 

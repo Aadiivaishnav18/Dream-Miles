@@ -16,7 +16,7 @@ const MapSection = () => {
         <div className="rounded-2xl overflow-hidden shadow-xl">
           <iframe
             src="https://www.google.com/maps?q=20,0&z=2&output=embed"
-            className="w-full h-[450px] border-0"
+            className="w-full h-[460px] border-0"
             loading="lazy"
           ></iframe>
         </div>

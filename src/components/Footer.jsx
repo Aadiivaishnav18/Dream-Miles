@@ -3,87 +3,100 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from 'lucide-reac
 
 const Footer = () => {
   return (
-    <footer className="bg-white pt-20 pb-12 px-6 font-sans">
-      <div className="max-w-7xl mx-auto">
+    <footer className="relative mt-28 bg-gradient-to-b from-white to-[#f8fafc] pt-20 pb-10 px-6 font-sans">
+      <div className="absolute -top-10 left-0 w-full h-20 bg-white/80 backdrop-blur-md"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Top Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-16">
           
+          {/* Brand */}
           <div>
-            <div className="flex items-center mb-6">
-              <span className="text-3xl font-serif font-bold text-[#4db2a4]">Dream</span>
-              <span className="text-3xl font-serif font-bold text-[#f28b82]">Miles</span>
+            <div className="flex items-center mb-4">
+              <span className="text-2xl font-serif font-bold text-[#4db2a4]">Dream</span>
+              <span className="text-2xl font-serif font-bold text-[#f28b82]">Miles</span>
             </div>
 
-            <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-sm">
+            <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-xs">
               Discover breathtaking destinations and plan unforgettable journeys around the world.
             </p>
 
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
                 <a 
                   key={index} 
                   href="#" 
-                  className="w-11 h-11 rounded-full bg-[#f8fafc] flex items-center justify-center text-[#4db2a4] shadow-sm hover:bg-[#4db2a4] hover:text-white transition-all duration-300"
+                  className="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center text-[#4db2a4] hover:bg-[#4db2a4] hover:text-white transition-all duration-300 hover:scale-110"
                 >
-                  <Icon size={18} />
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
           </div>
 
-          <div>
-            <h4 className="font-serif font-bold text-xl mb-6 text-gray-900">Company</h4>
-            <ul className="space-y-4 text-gray-600 text-base">
-              <li><a href="#" className="hover:text-[#4db2a4]">About Us</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Our Team</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Careers</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Press</a></li>
-            </ul>
-          </div>
+          {/* Links */}
+          {[
+            {
+              title: "Company",
+              links: ["About Us", "Our Team", "Careers", "Press"]
+            },
+            {
+              title: "Destinations",
+              links: ["Popular", "Europe", "Asia", "Americas"]
+            },
+            {
+              title: "Support",
+              links: ["Help Center", "Contact Us", "Privacy Policy", "Terms of Service"]
+            }
+          ].map((section, i) => (
+            <div key={i}>
+              <h4 className="font-semibold text-lg mb-4 text-gray-900">
+                {section.title}
+              </h4>
 
-          <div>
-            <h4 className="font-serif font-bold text-xl mb-6 text-gray-900">Destinations</h4>
-            <ul className="space-y-4 text-gray-600 text-base">
-              <li><a href="#" className="hover:text-[#4db2a4]">Popular</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Europe</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Asia</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Americas</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-serif font-bold text-xl mb-6 text-gray-900">Support</h4>
-            <ul className="space-y-4 text-gray-600 text-base">
-              <li><a href="#" className="hover:text-[#4db2a4]">Help Center</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Contact Us</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-[#4db2a4]">Terms of Service</a></li>
-            </ul>
-          </div>
+              <ul className="space-y-3 text-gray-600 text-sm">
+                {section.links.map((link, idx) => (
+                  <li key={idx}>
+                    <a 
+                      href="#" 
+                      className="relative hover:text-[#4db2a4] transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[1px] after:bg-[#4db2a4] hover:after:w-full after:transition-all"
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mb-14">
-          <h4 className="font-serif font-bold text-xl mb-5 text-gray-900">Contact</h4>
-          <div className="space-y-4 text-base">
-            <div className="flex items-center gap-3 text-gray-600">
-              <Mail size={18} className="text-gray-400" />
-              <span>info@dreammiles.com</span>
-            </div>
-            <div className="flex items-center gap-3 text-gray-600">
-              <Phone size={18} className="text-gray-400" />
-              <span>+1 (123) 456-7890</span>
-            </div>
+        {/* Contact */}
+        <div className="mb-12 flex flex-col sm:flex-row justify-between items-center gap-6 text-sm border-t border-gray-200 pt-6">
+          
+          <div className="flex items-center gap-3 text-gray-600">
+            <Mail size={16} className="text-gray-400" />
+            <span>info@dreammiles.com</span>
           </div>
+
+          <div className="flex items-center gap-3 text-gray-600">
+            <Phone size={16} className="text-gray-400" />
+            <span>+1 (123) 456-7890</span>
+          </div>
+
         </div>
 
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-5 text-base text-gray-500">
-          <p>© 2026 Dream Miles Travel Agency. All Rights Reserved.</p>
+        {/* Bottom */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          
+          <p>© 2026 Dream Miles. All rights reserved.</p>
 
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-gray-700">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-700">Terms of Service</a>
-            <a href="#" className="hover:text-gray-700">Cookie Policy</a>
+          <div className="flex gap-5">
+            <a href="#" className="hover:text-gray-700">Privacy</a>
+            <a href="#" className="hover:text-gray-700">Terms</a>
+            <a href="#" className="hover:text-gray-700">Cookies</a>
           </div>
+
         </div>
 
       </div>
