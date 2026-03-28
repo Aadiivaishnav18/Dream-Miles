@@ -13,15 +13,12 @@ const Hero = () => {
     setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
   }, []);
 
-
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    setIsLoggedIn(false);
-    navigate("/");
-  };
+const handleLogout = () => {
+  navigate("/signout");
+};
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/home" },
     { name: "Destinations", path: "/destinations" },
     { name: "Packages", path: "/packages" },
     { name: "Hotels", path: "/hotels" },
