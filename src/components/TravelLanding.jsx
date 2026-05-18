@@ -6,7 +6,7 @@ const destinations = [
     id: 1,
     country: "India",
     description:
-      "https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg.",
+      "Experience vibrant culture, historical wonders, and breathtaking landscapes",
     price: "$1899",
     rating: "4.9",
     image:
