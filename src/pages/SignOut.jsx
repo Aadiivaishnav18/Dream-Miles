@@ -33,7 +33,7 @@ export default function SignOut() {
           onClick={handleSignOut}
           className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold transition shadow-lg hover:shadow-red-500/30 active:scale-[0.98]"
         >
-          Sign Out
+          Go to Login 
         </button>
       </div>
     </div>

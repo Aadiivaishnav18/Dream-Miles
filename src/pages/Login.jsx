@@ -12,22 +12,25 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    e.preventDefault();
-    setError("");
+  e.preventDefault();
+  setError("");
 
-    if (email && password) {
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("userEmail", email);
+  if (email && password) {
+    
+    alert("Login Successful ✅ Welcome to Dream Miles!");
 
-      if (rememberMe) {
-        localStorage.setItem("rememberMe", "true");
-      }
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userEmail", email);
 
-      navigate("/home");
-    } else {
-      setError("Please enter your email and password.");
+    if (rememberMe) {
+      localStorage.setItem("rememberMe", "true");
     }
-  };
+
+    navigate("/home");
+  } else {
+    setError("Please enter your email and password.");
+  }
+};
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden font-sans">

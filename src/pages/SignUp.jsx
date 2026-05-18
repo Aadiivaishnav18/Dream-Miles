@@ -15,20 +15,22 @@ export default function Signup() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (form.password !== form.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+  if (form.password !== form.confirmPassword) {
+    alert("Passwords do not match!");
+    return;
+  }
 
-    alert(`Welcome ${form.name}, signup successful! Click OK to sign in.`);
+  const username = prompt("Enter your display name again (optional):");
 
-    setForm({ name: "", email: "", password: "", confirmPassword: "" });
+  alert(`Welcome ${form.name} (${username || "User"}), signup successful!`);
 
-    navigate("/signin");
-  };
+  setForm({ name: "", email: "", password: "", confirmPassword: "" });
+
+  navigate("/signin");
+};
 
   const inputClasses =
     "w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-200 outline-none focus:ring-2 focus:ring-blue-400 transition-all";
