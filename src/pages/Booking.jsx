@@ -14,6 +14,7 @@ import { destinationsData } from '../data/destinationsData';
 import { packagesData } from '../data/packagesData';
 
 const Booking = () => {
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -36,7 +37,10 @@ const Booking = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('booking-data', JSON.stringify(formData));
+    localStorage.setItem(
+      'booking-data',
+      JSON.stringify(formData)
+    );
   }, [formData]);
 
   const selectedPackage = packagesData.find(
@@ -44,7 +48,8 @@ const Booking = () => {
   );
 
   const totalPrice = selectedPackage
-    ? Number(selectedPackage.price) * Number(formData.travelers)
+    ? Number(selectedPackage.price) *
+      Number(formData.travelers)
     : 0;
 
   const handleChange = (e) => {
@@ -62,16 +67,43 @@ const Booking = () => {
     setLoading(true);
 
     setTimeout(() => {
+
+      const existingBookings =
+        JSON.parse(localStorage.getItem('bookings')) || [];
+
+      const newBooking = {
+        id: Date.now(),
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        destination: formData.destination,
+        travelDate: formData.travelDate,
+        travelers: formData.travelers,
+        package: formData.package,
+        totalPrice,
+        bookedAt: new Date().toLocaleString(),
+      };
+
+      existingBookings.push(newBooking);
+
+      localStorage.setItem(
+        'bookings',
+        JSON.stringify(existingBookings)
+      );
+
       setLoading(false);
+
       setSubmitted(true);
 
       alert(
         `🎉 Your trip to ${formData.destination} has been booked successfully.`
       );
+
     }, 1800);
   };
 
   const handleReset = () => {
+
     setFormData({
       fullName: '',
       email: '',
@@ -112,32 +144,56 @@ const Booking = () => {
               <p className="text-gray-400 text-sm mb-8">
                 Your booking has been confirmed successfully.
               </p>
+
             </div>
 
             <div className="space-y-4 text-sm">
 
               <div className="flex justify-between border-b border-white/10 pb-3">
-                <span className="text-gray-400">Destination</span>
-                <span>{formData.destination}</span>
+                <span className="text-gray-400">
+                  Destination
+                </span>
+
+                <span>
+                  {formData.destination}
+                </span>
               </div>
 
               <div className="flex justify-between border-b border-white/10 pb-3">
-                <span className="text-gray-400">Travel Date</span>
-                <span>{formData.travelDate}</span>
+                <span className="text-gray-400">
+                  Travel Date
+                </span>
+
+                <span>
+                  {formData.travelDate}
+                </span>
               </div>
 
               <div className="flex justify-between border-b border-white/10 pb-3">
-                <span className="text-gray-400">Travelers</span>
-                <span>{formData.travelers}</span>
+                <span className="text-gray-400">
+                  Travelers
+                </span>
+
+                <span>
+                  {formData.travelers}
+                </span>
               </div>
 
               <div className="flex justify-between border-b border-white/10 pb-3">
-                <span className="text-gray-400">Package</span>
-                <span>{formData.package}</span>
+                <span className="text-gray-400">
+                  Package
+                </span>
+
+                <span>
+                  {formData.package}
+                </span>
               </div>
 
               <div className="flex justify-between pt-2 text-lg font-semibold">
-                <span>Total</span>
+                <span>
+                  Total
+                </span>
+
                 <span className="text-primary">
                   ${totalPrice}
                 </span>
@@ -157,6 +213,7 @@ const Booking = () => {
         </div>
 
         <Footer />
+
       </div>
     );
   }
@@ -261,7 +318,10 @@ const Booking = () => {
                   required
                   className="w-full h-12 px-4 rounded-xl bg-black/30 border border-white/10 focus:border-primary outline-none text-sm"
                 >
-                  <option value="">Select</option>
+
+                  <option value="">
+                    Select
+                  </option>
 
                   {destinationsData.map((dest) => (
                     <option
@@ -272,6 +332,7 @@ const Booking = () => {
                       {dest.name}
                     </option>
                   ))}
+
                 </select>
               </div>
 
@@ -324,7 +385,9 @@ const Booking = () => {
                 className="w-full h-12 px-4 rounded-xl bg-black/30 border border-white/10 focus:border-primary outline-none text-sm"
               >
 
-                <option value="">Choose Package</option>
+                <option value="">
+                  Choose Package
+                </option>
 
                 {packagesData.map((pkg) => (
                   <option
@@ -343,6 +406,7 @@ const Booking = () => {
             <div className="mt-6 bg-black/20 rounded-2xl border border-white/10 p-5">
 
               <div className="flex justify-between items-center text-sm mb-3">
+
                 <span className="text-gray-400">
                   Selected Package
                 </span>
@@ -350,9 +414,11 @@ const Booking = () => {
                 <span>
                   {formData.package || 'Not Selected'}
                 </span>
+
               </div>
 
               <div className="flex justify-between items-center text-sm mb-3">
+
                 <span className="text-gray-400">
                   Travelers
                 </span>
@@ -360,14 +426,19 @@ const Booking = () => {
                 <span>
                   {formData.travelers}
                 </span>
+
               </div>
 
               <div className="flex justify-between items-center text-lg font-semibold">
-                <span>Total Price</span>
+
+                <span>
+                  Total Price
+                </span>
 
                 <span className="text-primary">
                   ${totalPrice}
                 </span>
+
               </div>
 
             </div>

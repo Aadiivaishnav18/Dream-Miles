@@ -1,5 +1,3 @@
-// src/components/DashboardView.jsx
-
 import React from "react";
 import { motion } from "framer-motion";
 import { User, Globe, MapPin, Gift, Hotel } from "lucide-react";
@@ -8,10 +6,12 @@ import { useNavigate } from "react-router-dom";
 const DashboardView = ({ userData }) => {
   const navigate = useNavigate();
 
+  const bookings =
+    JSON.parse(localStorage.getItem("bookings")) || [];
+
   return (
     <div className="w-full max-w-6xl mx-auto px-6 py-6 md:py-10 text-left">
 
-      {/* Heading */}
       <h2 className="text-white text-4xl md:text-5xl font-bold tracking-wide font-[Playfair_Display] mb-3">
         Welcome back!
       </h2>
@@ -20,7 +20,6 @@ const DashboardView = ({ userData }) => {
         Manage your bookings and plan your next adventure
       </p>
 
-      {/* Main Cards */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -28,7 +27,6 @@ const DashboardView = ({ userData }) => {
         className="grid grid-cols-1 lg:grid-cols-3 gap-8"
       >
 
-        {/* Profile Card */}
         <div className="bg-white/[0.04] backdrop-blur-2xl border border-white/10 p-8 rounded-3xl flex flex-col justify-between items-center text-center shadow-2xl relative overflow-hidden">
 
           <div className="absolute inset-0 bg-gradient-to-br from-[#4db2a4]/5 via-transparent to-transparent" />
@@ -56,7 +54,7 @@ const DashboardView = ({ userData }) => {
               </span>
 
               <span className="text-[#4db2a4] text-xl font-bold">
-                {userData.totalBookings}
+                {bookings.length}
               </span>
             </div>
 
@@ -73,7 +71,6 @@ const DashboardView = ({ userData }) => {
           </div>
         </div>
 
-        {/* Booking Card */}
         <div className="lg:col-span-2 bg-white/[0.04] backdrop-blur-2xl border border-white/10 p-8 rounded-3xl flex flex-col justify-center items-center shadow-2xl relative min-h-[320px] overflow-hidden">
 
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent" />
@@ -89,11 +86,19 @@ const DashboardView = ({ userData }) => {
             </div>
 
             <p className="text-gray-200 font-semibold text-xl">
-              No bookings yet.
+              {
+                bookings.length > 0
+                  ? `${bookings.length} Booking(s) Found`
+                  : "No bookings yet."
+              }
             </p>
 
             <p className="text-gray-400 text-sm mt-2 leading-relaxed">
-              Start planning your next adventure today and explore beautiful destinations around the world.
+              {
+                bookings.length > 0
+                  ? "Your travel bookings are successfully stored in your dashboard."
+                  : "Start planning your next adventure today and explore beautiful destinations around the world."
+              }
             </p>
 
             <motion.button
@@ -108,7 +113,6 @@ const DashboardView = ({ userData }) => {
         </div>
       </motion.div>
 
-      {/* Quick Actions */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
