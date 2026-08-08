@@ -1,0 +1,201 @@
+export const destinationsData = [
+  {
+    id: "india",
+    name: "India",
+    description:
+      "Experience vibrant culture, historical wonders, and breathtaking landscapes.",
+    image:
+      "https://images.pexels.com/photos/9179927/pexels-photo-9179927.jpeg",
+    price: 899,
+    rating: 4.7,
+    category: "Asia",
+    explore: "/destination/india",
+  },
+  {
+    id: "italy",
+    name: "Italy",
+    description: "Discover art, history, and world-famous cuisine.",
+    image:
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80",
+    price: 1799,
+    rating: 4.8,
+    category: "Europe",
+    explore: "/destination/italy",
+  },
+  {
+    id: "australia",
+    name: "Australia",
+    description: "Beaches, reefs, and wild outback adventures.",
+    image:
+      "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80",
+    price: 1599,
+    rating: 4.7,
+    category: "Oceania",
+    explore: "/destination/australia",
+  },
+  {
+    id: "japan",
+    name: "Japan",
+    description: "Tradition meets futuristic technology.",
+    image:
+      "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=800&q=80",
+    price: 1499,
+    rating: 4.6,
+    category: "Asia",
+    explore: "/destination/japan",
+  },
+  {
+    id: "london",
+    name: "London",
+    description: "Historic landmarks and modern culture.",
+    image:
+      "https://images.pexels.com/photos/2611465/pexels-photo-2611465.jpeg",
+    price: 1399,
+    rating: 4.5,
+    category: "Europe",
+    explore: "/destination/london",
+  },
+  {
+    id: "switzerland",
+    name: "Switzerland",
+    description: "Snow mountains and peaceful lakes.",
+    image:
+      "https://images.pexels.com/photos/2026454/pexels-photo-2026454.jpeg",
+    price: 1299,
+    rating: 4.9,
+    category: "Europe",
+    explore: "/destination/switzerland",
+  },
+  {
+    id: "greece",
+    name: "Greece",
+    description: "White villages and blue seas.",
+    image:
+      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80",
+    price: 1499,
+    rating: 4.8,
+    category: "Europe",
+    explore: "/destination/greece",
+  },
+  {
+    id: "dubai",
+    name: "Dubai",
+    description: "Luxury skyscrapers and desert safari.",
+    image:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+    price: 2099,
+    rating: 4.9,
+    category: "Middle East",
+    explore: "/destination/dubai",
+  },
+  {
+    id: "france",
+    name: "France",
+    description: "Romance, fashion, Eiffel Tower.",
+    image:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+    price: 1699,
+    rating: 4.7,
+    category: "Europe",
+    explore: "/destination/france",
+  },
+  {
+    id: "thailand",
+    name: "Thailand",
+    description: "Beaches and street food paradise.",
+    image:
+      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80",
+    price: 1199,
+    rating: 4.6,
+    category: "Asia",
+    explore: "/destination/thailand",
+  },
+  {
+    id: "usa",
+    name: "USA",
+    description: "Big cities and national parks.",
+    image:
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+    price: 2299,
+    rating: 4.8,
+    category: "North America",
+    explore: "/destination/usa",
+  },
+  {
+    id: "turkey",
+    name: "Turkey",
+    description: "East meets West culture.",
+    image:
+      "https://images.unsplash.com/photo-1527838832700-5059252407fa?auto=format&fit=crop&w=800&q=80",
+    price: 1399,
+    rating: 4.7,
+    category: "Europe/Asia",
+    explore: "/destination/turkey",
+  },
+  {
+    id: "maldives",
+    name: "Maldives",
+    description: "Overwater luxury paradise.",
+    image:
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80",
+    price: 2599,
+    rating: 5.0,
+    category: "Beach",
+    explore: "/destination/maldives",
+  },
+  {
+    id: "singapore",
+    name: "Singapore",
+    description: "Modern futuristic city.",
+    image:
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80",
+    price: 1799,
+    rating: 4.8,
+    category: "Asia",
+    explore: "/destination/singapore",
+  },
+  {
+    id: "spain",
+    name: "Spain",
+    description: "Flamenco and sunny beaches.",
+    image:
+      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80",
+    price: 1499,
+    rating: 4.7,
+    category: "Europe",
+    explore: "/destination/spain",
+  },
+  {
+    id: "canada",
+    name: "Canada",
+    description: "Mountains and lakes beauty.",
+    image:
+      "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=800&q=80",
+    price: 1899,
+    rating: 4.8,
+    category: "North America",
+    explore: "/destination/canada",
+  },
+  {
+    id: "indonesia",
+    name: "Indonesia",
+    description: "Bali beaches and volcanoes.",
+    image:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80",
+    price: 1399,
+    rating: 4.7,
+    category: "Asia",
+    explore: "/destination/indonesia",
+  },
+  {
+    id: "south-korea",
+    name: "South Korea",
+    description: "K-pop culture and modern lifestyle.",
+    image:
+      "https://images.pexels.com/photos/32470935/pexels-photo-32470935.jpeg",
+    price: 1599,
+    rating: 4.8,
+    category: "Asia",
+    explore: "/destination/south-korea",
+  },
+];
